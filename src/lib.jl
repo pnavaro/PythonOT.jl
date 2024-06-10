@@ -534,10 +534,10 @@ The function solves the following optimization problem:
 
 where:
 
-- ``\\mathbf{M}`` is the (``dim_a``, ``dim_b``) metric cost matrix
-- ``\\mathbf{a}`` and ``\\mathbf{b}`` are source and target unbalanced distributions
-- ``\\mathbf{c}`` is a reference distribution for the regularization
-- ``\\mathrm{div}`` is a divergence, either Kullback-Leibler or ``\\ell_2`` divergence
+- ``\\mathbf{M}`` is the (``dim_a``, ``dim_b``) metric cost matrix.
+- ``\\mathbf{a}`` and ``\\mathbf{b}`` are source and target unbalanced distributions.
+- ``\\mathbf{c}`` is a reference distribution for the regularization.
+- ``\\mathrm{reg_m}`` is the marginal relaxation term 
 
 This function is a wrapper of the function
 [`mm_unbalanced`](https://pythonot.github.io/gen_modules/ot.unbalanced.html#ot.unbalanced.mm_unbalanced) in the
