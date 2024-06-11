@@ -20,7 +20,6 @@ makedocs(;
         assets=String[],
     ),
     pages=["Home" => "index.md", "api.md"],
-    strict=true,
     checkdocs=:exports,
     doctestfilters=[
         r"{([a-zA-Z0-9]+,\s?)+[a-zA-Z0-9]+}",
