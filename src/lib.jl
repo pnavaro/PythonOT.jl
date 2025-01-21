@@ -555,20 +555,11 @@ The function considers the following problem:
 ```math
 \\gamma = \\mathop{\\arg \\min}_\\gamma \\quad \\langle \\gamma,
 \\mathbf{M} \\rangle_F + \\mathrm{reg} \\cdot\\Omega(\\gamma)
-
-s.t. \\gamma \\mathbf{1} &\\leq \\mathbf{a} \\\\
-     \\gamma^T \\mathbf{1} &\\leq \\mathbf{b} \\\\
-     \\gamma &\\geq 0 \\\\
-     \\mathbf{1}^T \\gamma^T \\mathbf{1} = m
-     &\\leq \\min\\{\\|\\mathbf{a}\\|_1, \\|\\mathbf{b}\\|_1\\} \\\\
 ```
 
-where :
-
-- `M` is the metric cost matrix
-- ``\\Omega``  is the entropic regularization term, ``\\Omega=\\sum_{i,j} \\gamma_{i,j}\\log(\\gamma_{i,j})``
 - `a` and `b` are the sample weights
-- `m` is the amount of mass to be transported
+- `M` is the metric cost matrix
+- `reg` is a regularization term > 0
 
 This function is a wrapper of the function
 [`entropic_partial_wasserstein`](https://pythonot.github.io/gen_modules/ot.partial.html#ot.partial.entropic_partial_wasserstein) in the
@@ -589,6 +580,8 @@ julia> round.(entropic_partial_wasserstein(a, b, M, 1, m=0.1), digits=2)
 2×2 Matrix{Float64}:
  0.06  0.02
  0.01  0.0
+```
+
 """
 function entropic_partial_wasserstein(a, b, M, reg; kwargs...)
     return pot.partial.entropic_partial_wasserstein(a, b, M, reg; kwargs...)
