@@ -587,6 +587,10 @@ function entropic_partial_wasserstein(a, b, M, reg; kwargs...)
     return pot.partial.entropic_partial_wasserstein(a, b, M, reg; kwargs...)
 end
 
+function partial_wasserstein(a, b, M; kwargs...)
+    return pot.partial.partial_wasserstein2(a, b, M; kwargs...)
+end
+
 function partial_wasserstein2(a, b, M; kwargs...)
     return pot.partial.partial_wasserstein2(a, b, M; kwargs...)
 end
