@@ -586,3 +586,7 @@ julia> round.(entropic_partial_wasserstein(a, b, M, 1, m=0.1), digits=2)
 function entropic_partial_wasserstein(a, b, M, reg; kwargs...)
     return pot.partial.entropic_partial_wasserstein(a, b, M, reg; kwargs...)
 end
+
+function partial_wasserstein2(a, b, M; kwargs...)
+    return pot.partial.partial_wasserstein2(a, b, M; kwargs...)
+end

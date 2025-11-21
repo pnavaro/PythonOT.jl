@@ -14,7 +14,8 @@ export emd,
     sinkhorn_unbalanced2,
     empirical_sinkhorn_divergence,
     mm_unbalanced,
-    entropic_partial_wasserstein
+    entropic_partial_wasserstein,
+    partial_wasserstein2
 
 const pot = PyCall.PyNULL()
 
