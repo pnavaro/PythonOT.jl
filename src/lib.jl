@@ -595,6 +595,10 @@ function partial_wasserstein2(a, b, M; kwargs...)
     return pot.partial.partial_wasserstein2(a, b, M; kwargs...)
 end
 
+function entropic_partial_gromov_wasserstein(C1, C2, p, q, reg; kwargs...)
+    return pot.partial.entropic_partial_gromov_wasserstein(C1, C2, p, q, reg; kwargs...)
+end
+
 function entropic_partial_gromov_wasserstein2(C1, C2, p, q; kwargs...)
     return pot.partial.entropic_partial_gromov_wasserstein2(C1, C2, p, q; kwargs...)
 end

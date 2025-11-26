@@ -15,6 +15,7 @@ export emd,
     empirical_sinkhorn_divergence,
     mm_unbalanced,
     entropic_partial_wasserstein,
+    entropic_partial_gromov_wasserstein,
     entropic_partial_gromov_wasserstein2,
     partial_wasserstein,
     partial_wasserstein2
