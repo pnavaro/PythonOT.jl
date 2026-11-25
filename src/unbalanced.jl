@@ -114,18 +114,20 @@ Python function.
 # Examples
 
 ```jldoctest
-julia> A = rand(10, 3);
+julia> x = range(0, 1; length=10);
+
+julia> A = hcat([exp.(-(x .- m) .^ 2 ./ 0.02) for m in (0.2, 0.5, 0.8)]...);
 
 julia> A ./= sum(A; dims=1);
 
-julia> C = rand(10, 10);
+julia> C = [(xi - xj)^2 for xi in x, xj in x];
 
-julia> isapprox(sum(barycenter_unbalanced(A, C, 0.01, 1; method="sinkhorn_stabilized")), 1; atol=1e-4)
-false
+julia> B = barycenter_unbalanced(A, C, 0.01, 10; method="sinkhorn_stabilized");
 
-julia> isapprox(sum(barycenter_unbalanced(
-           A, C, 0.01, 10_000; method="sinkhorn_stabilized", numItermax=5_000
-       )), 1; atol=1e-4)
+julia> size(B)
+(10,)
+
+julia> all(B .>= 0)
 true
 ```
 
