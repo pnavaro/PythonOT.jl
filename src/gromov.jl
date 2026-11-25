@@ -142,3 +142,55 @@ package. Keyword arguments are listed in the documentation of the Python functio
 function fgw_barycenters(N, Ys, Cs; kwargs...)
     return pot.gromov.fgw_barycenters(N, Ys, Cs; kwargs...)
 end
+
+"""
+    partial_gromov_wasserstein(C1, C2, p, q; kwargs...)
+
+Solve the partial Gromov-Wasserstein problem and return the transport plan.
+
+This function is a wrapper of the function
+[`ot.gromov.partial_gromov_wasserstein`](https://pythonot.github.io/gen_modules/ot.gromov.html#ot.gromov.partial_gromov_wasserstein) in the Python Optimal Transport
+package. Keyword arguments are listed in the documentation of the Python function.
+"""
+function partial_gromov_wasserstein(C1, C2, p, q; kwargs...)
+    return pot.gromov.partial_gromov_wasserstein(C1, C2, p, q; kwargs...)
+end
+
+"""
+    partial_gromov_wasserstein2(C1, C2, p, q; kwargs...)
+
+Solve the partial Gromov-Wasserstein problem and return the cost.
+
+This function is a wrapper of the function
+[`ot.gromov.partial_gromov_wasserstein2`](https://pythonot.github.io/gen_modules/ot.gromov.html#ot.gromov.partial_gromov_wasserstein2) in the Python Optimal Transport
+package. Keyword arguments are listed in the documentation of the Python function.
+"""
+function partial_gromov_wasserstein2(C1, C2, p, q; kwargs...)
+    return pot.gromov.partial_gromov_wasserstein2(C1, C2, p, q; kwargs...)
+end
+
+"""
+    entropic_partial_gromov_wasserstein(C1, C2, p, q, reg; kwargs...)
+
+Solve the entropic partial Gromov-Wasserstein problem and return the transport plan.
+
+This function is a wrapper of the function
+[`ot.gromov.entropic_partial_gromov_wasserstein`](https://pythonot.github.io/gen_modules/ot.gromov.html#ot.gromov.entropic_partial_gromov_wasserstein) in the Python Optimal Transport
+package. Keyword arguments are listed in the documentation of the Python function.
+"""
+function entropic_partial_gromov_wasserstein(C1, C2, p, q, reg; kwargs...)
+    return pot.gromov.entropic_partial_gromov_wasserstein(C1, C2, p, q, reg; kwargs...)
+end
+
+"""
+    entropic_partial_gromov_wasserstein2(C1, C2, p, q, reg; kwargs...)
+
+Solve the entropic partial Gromov-Wasserstein problem and return the cost.
+
+This function is a wrapper of the function
+[`ot.gromov.entropic_partial_gromov_wasserstein2`](https://pythonot.github.io/gen_modules/ot.gromov.html#ot.gromov.entropic_partial_gromov_wasserstein2) in the Python Optimal Transport
+package. Keyword arguments are listed in the documentation of the Python function.
+"""
+function entropic_partial_gromov_wasserstein2(C1, C2, p, q, reg; kwargs...)
+    return pot.gromov.entropic_partial_gromov_wasserstein2(C1, C2, p, q, reg; kwargs...)
+end

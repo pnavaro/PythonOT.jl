@@ -66,7 +66,10 @@ end
 include("smooth.jl")
 
 function __init__()
-    return copy!(pot, PyCall.pyimport_conda("ot", "pot", "conda-forge"))
+    copy!(pot, PyCall.pyimport_conda("ot", "pot", "conda-forge"))
+    # SciPy warns about the unused `disp` option that POT passes to `minimize`
+    PyCall.pyimport("warnings").filterwarnings("ignore"; message="Unknown solver options")
+    return nothing
 end
 
 end

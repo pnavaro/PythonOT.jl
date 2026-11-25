@@ -12,6 +12,9 @@ using PythonOT: dist, unif, solve, get_random_projections
 using Documenter
 using Test
 
+# Keep the test output quiet: POT emits deprecation and convergence warnings
+PythonOT.PyCall.pyimport("warnings").filterwarnings("ignore")
+
 @testset "PythonOT.jl" begin
     @testset "doctests" begin
         DocMeta.setdocmeta!(PythonOT, :DocTestSetup, :(using PythonOT); recursive=true)
