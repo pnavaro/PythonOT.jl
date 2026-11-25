@@ -45,8 +45,9 @@ PythonOT.PyCall.pyimport("warnings").filterwarnings("ignore")
         @test wasserstein_1d([0.0, 1.0], [1.0, 2.0]) ≈ 1
         @test mm_unbalanced2(μ[1:2], ν, C[1:2, :], 5) isa Real
         @test lbfgsb_unbalanced(μ, ν, C, 0.1, 1.0) isa Matrix
-        @test size(empirical_sinkhorn([0.0 0.0; 1.0 1.0], [0.0 1.0; 2.0 2.0; 3.0 3.0], 1.0)) ==
-            (2, 3)
+        @test size(
+            empirical_sinkhorn([0.0 0.0; 1.0 1.0], [0.0 1.0; 2.0 2.0; 3.0 3.0], 1.0)
+        ) == (2, 3)
         @test empirical_sinkhorn2([0.0; 1.0;;], [2.0; 3.0;;], 0.1) isa Any
 
         xs = [0.0 0.0; 1.0 0.0; 0.0 1.0]

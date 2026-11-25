@@ -100,7 +100,9 @@ This function is a wrapper of the function
 [`ot.gromov.entropic_fused_gromov_wasserstein`](https://pythonot.github.io/gen_modules/ot.gromov.html#ot.gromov.entropic_fused_gromov_wasserstein) in the Python Optimal Transport
 package. Keyword arguments are listed in the documentation of the Python function.
 """
-function entropic_fused_gromov_wasserstein(μ, ν, M, Cμ, Cν, ε, loss="square_loss"; kwargs...)
+function entropic_fused_gromov_wasserstein(
+    μ, ν, M, Cμ, Cν, ε, loss="square_loss"; kwargs...
+)
     return pot.gromov.entropic_fused_gromov_wasserstein(M, Cμ, Cν, μ, ν, loss, ε; kwargs...)
 end
 
