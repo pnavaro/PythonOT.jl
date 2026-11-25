@@ -203,5 +203,7 @@ This function is a wrapper of the function
 package. Keyword arguments are listed in the documentation of the Python function.
 """
 function free_support_barycenter(measures_locations, measures_weights, X_init; kwargs...)
-    return pot.lp.free_support_barycenter(measures_locations, measures_weights, X_init; kwargs...)
+    return pot.lp.free_support_barycenter(
+        measures_locations, measures_weights, X_init; kwargs...
+    )
 end

@@ -209,7 +209,9 @@ This function is a wrapper of the function
 package. Keyword arguments are listed in the documentation of the Python function.
 """
 function sinkhorn_unbalanced_translation_invariant(a, b, M, reg, reg_m; kwargs...)
-    return pot.unbalanced.sinkhorn_unbalanced_translation_invariant(a, b, M, reg, reg_m; kwargs...)
+    return pot.unbalanced.sinkhorn_unbalanced_translation_invariant(
+        a, b, M, reg, reg_m; kwargs...
+    )
 end
 
 """
