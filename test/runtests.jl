@@ -28,7 +28,17 @@ PythonOT.PyCall.pyimport("warnings").filterwarnings("ignore")
         )
     end
 
-    for f in ("lp", "bregman", "unbalanced", "partial", "gromov", "sliced", "da", "smooth", "utils")
+    for f in (
+        "lp",
+        "bregman",
+        "unbalanced",
+        "partial",
+        "gromov",
+        "sliced",
+        "da",
+        "smooth",
+        "utils",
+    )
         include(f * ".jl")
     end
 end

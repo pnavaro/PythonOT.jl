@@ -12,8 +12,8 @@
     w = only(wasserstein_circle(u, v))
     @test w ≥ 0
     @test only(wasserstein_circle(u, u)) ≈ 0 atol = 1e-8
-    @test only(first(binary_search_circle(u, v; p=2))) ≈
-        only(wasserstein_circle(u, v; p=2)) atol = 1e-2
+    @test only(first(binary_search_circle(u, v; p=2))) ≈ only(wasserstein_circle(u, v; p=2)) atol =
+        1e-2
     @test only(wasserstein_circle(u, u; p=2)) ≈ 0 atol = 1e-8
     @test only(linear_circular_ot(u, v)) ≥ 0
 
