@@ -3,7 +3,7 @@ module Smooth
 using ..PythonOT: PythonOT
 using ..PyCall: PyCall
 
-export smooth_ot_dual
+export smooth_ot_dual, smooth_ot_semi_dual
 
 """
     smooth_ot_dual(μ, ν, C, ε; reg_type="l2", kwargs...)
@@ -55,5 +55,20 @@ julia> smooth_ot_dual(μ, ν, C, 0.01)
 """
 function smooth_ot_dual(μ, ν, C, ε; kwargs...)
     return PythonOT.pot.smooth.smooth_ot_dual(μ, ν, C, ε; kwargs...)
+end
+
+"""
+    smooth_ot_semi_dual(μ, ν, C, ε; reg_type="l2", kwargs...)
+
+Compute the optimal transport plan for a regularized optimal transport problem by solving
+its semi-dual formulation (see [`smooth_ot_dual`](@ref)).
+
+This function is a wrapper of the function
+[`smooth_ot_semi_dual`](https://pythonot.github.io/gen_modules/ot.smooth.html#ot.smooth.smooth_ot_semi_dual)
+in the Python Optimal Transport package. Keyword arguments are listed in the documentation
+of the Python function.
+"""
+function smooth_ot_semi_dual(μ, ν, C, ε; kwargs...)
+    return PythonOT.pot.smooth.smooth_ot_semi_dual(μ, ν, C, ε; kwargs...)
 end
 end
